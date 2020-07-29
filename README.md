@@ -1,2 +1,4 @@
-# python_sendmail
-Script collection for sending direct mail with attached file
+# 添付ファイル付きのダイレクトメールを送信するPythonスクリプト集
+
+tuple/
+　タプル内に送信先と添付ファイルを指定
