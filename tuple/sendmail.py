@@ -7,13 +7,13 @@ import smtplib
 import os.path
 
 ## 初期設定
-# 号数
+# 号数（go）
 go = 1
 
-# 送信先の数、メールアドレス、名前、添付ファイル
+# 送信先の数（count）、メールアドレス（to_email）、名前（dist_name）、添付ファイル（mail_file）
 count = 2
 to_email = ('xxxx@example.com', 'yyyy@example.com')
-invoice_name = ('高橋', '山田')
+dist_name = ('高橋', '山田')
 mail_file = ('./招待状_高橋様.png', './招待状_山田様.png')
 
 # メッセージ
@@ -40,7 +40,7 @@ for i in range(count):
     msg["To"] = to_email[i]
     with open(message_template) as f:
         message = f.read()
-    message = message.replace("#NAME#", invoice_name[i])
+    message = message.replace("#NAME#", dist_name[i])
     message = message.replace("#DATE#", date)
     message = message.replace("#PLACE#", place)
     msg.attach(email.mime.text.MIMEText(message))
